@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#151b32">
+<meta name="description" content="Deine persönliche Studienzentrale für Internationale Betriebswirtschaft an der Hochschule Aalen: farbiger Stundenplan, Klausuren, Aufgaben, Lernzettel und Noten.">
+<title>orbit. — Mein IBW-Studium</title>
+<link rel="icon" type="image/svg+xml" href="assets/icon.svg">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<div class="app-shell" id="appShell">
+  <aside class="sidebar" id="sidebar">
+    <a href="#/heute" class="brand" aria-label="Orbit Startseite"><span class="brand-symbol">✳</span><span class="brand-word">orbit<span>.</span><small>dein studioplaner</small></span></a>
+    <div class="workspace-tile"><span class="workspace-icon">IB</span><span><strong>Mein Studium</strong><small>Internationale BWL · Aalen</small></span><span class="workspace-chev">⌄</span></div>
+    <div class="nav-group-title">WORKSPACE</div>
+    <nav class="sidebar-nav" id="nav" aria-label="Hauptnavigation"></nav>
+    <div class="nav-group-title second-nav-title">ORGANISATION</div>
+    <nav class="sidebar-nav" id="navMore" aria-label="Organisation"></nav>
+    <div class="sidebar-bottom"><div class="side-progress"><div class="side-progress-header"><span>Dein Studienfortschritt</span><strong id="sideProgressPct">0 %</strong></div><div class="progress-track"><div class="progress-fill" id="sideProgressFill"></div></div><small id="sideProgressLabel">0 von 210 Credits geschafft</small></div><a class="sidebar-settings" href="#/einstellungen"><span data-icon="settings"></span> Einstellungen <span class="side-gear">↗</span></a></div>
+  </aside>
+  <div class="app-main">
+    <header class="topbar"><div class="topbar-left"><button id="menuBtn" class="icon-button menu-btn" aria-label="Menü öffnen" type="button"><span data-icon="menu"></span></button><div class="breadcrumbs">Mein Workspace <span>/</span> <strong id="crumb">Übersicht</strong></div></div><div class="topbar-actions"><div class="semester-wrap"><span class="semester-label">Semester</span><select id="semesterSelect" aria-label="Semester auswählen"></select></div><button class="icon-button theme-toggle" id="themeToggle" type="button" aria-label="Design umschalten"><span data-icon="moon"></span></button><div class="avatar" title="Dein Studienplaner">IB</div></div></header>
+    <main class="main-content" id="main" tabindex="-1" aria-live="polite"></main>
+  </div>
+</div>
+<nav class="mobile-nav" id="mobileNav" aria-label="Mobile Navigation"></nav>
+<div class="mobile-backdrop" id="mobileBackdrop" hidden></div>
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+<dialog class="modal" id="modal"><form method="dialog" id="modalForm"><div class="modal-header"><div><div class="eyebrow" id="modalEyebrow">NEUER EINTRAG</div><h2 id="modalTitle">Eintrag erstellen</h2></div><button class="icon-button" type="button" id="modalClose" aria-label="Schließen"><span data-icon="x"></span></button></div><div id="modalBody" class="modal-body"></div><div class="modal-footer"><button class="button button-ghost" type="button" id="modalCancel">Abbrechen</button><button class="button button-primary" type="submit" id="modalSubmit">Speichern</button></div></form></dialog>
+<script src="assets/data.js"></script>
+<script src="assets/app.js" defer></script>
+</body>
+</html>
