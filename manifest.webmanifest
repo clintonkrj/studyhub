@@ -1,0 +1,3 @@
+{
+ "name":"orbit. — IBW Studienplaner","short_name":"orbit. IBW","description":"Studienorganisation für Internationale Betriebswirtschaft an der Hochschule Aalen","start_url":"./#/heute","display":"standalone","background_color":"#f6f7fb","theme_color":"#151b32","icons":[{"src":"assets/icon.svg","sizes":"any","type":"image/svg+xml","purpose":"any maskable"}]
+}
