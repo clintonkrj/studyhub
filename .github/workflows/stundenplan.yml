@@ -1,0 +1,26 @@
+name: Hochschul-Stundenplan aktualisieren
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '15 3 * * *'
+permissions:
+  contents: write
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Hochschul-iCal herunterladen
+        run: |
+          mkdir -p data
+          curl -fL --retry 3 --max-time 60 'https://vorlesungen.htw-aalen.de/splan/ical?lan=de&puid=54&type=pg&pgid=14700' -o data/stundenplan.ics
+          grep -q 'BEGIN:VCALENDAR' data/stundenplan.ics
+      - name: Wenn geändert, aktualisieren
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/stundenplan.ics
+          if ! git diff --cached --quiet; then
+            git commit -m 'Stundenplan aus Hochschul-sPlan aktualisieren'
+            git push
+          fi
